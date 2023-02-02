@@ -23,7 +23,7 @@ class PlayerRepositoryTest {
     @BeforeEach
     public void setupPlayers() {
         if (!dataIsInitalized) {
-            List<String> players = new ArrayList<>(Arrays.asList("aa", "bb", "cc"));
+            List<String> players = new ArrayList<>(Arrays.asList("aa", "bb", "cd"));
             List<Player> playerEnities = players.stream().map(p -> new Player(p)).toList();
             playerRepository.saveAll(playerEnities);
             dataIsInitalized = true;
@@ -34,7 +34,7 @@ class PlayerRepositoryTest {
     public void testGetAll() {
         //Will this test pass, if it runs AFTER the next text
         List<Player> players = playerRepository.findAll();
-        assertEquals(4, players.size());
+        assertEquals(3, players.size());
     }
 
     @Test
